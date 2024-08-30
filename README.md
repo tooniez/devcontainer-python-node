@@ -1,9 +1,11 @@
-# DevContainer Base template
+# DevContainer for Node.js and Python Development
 
-This repository contains a DevContainer base configuration for a development environment. It provides a consistent, reproducible setup for developers working on projects that involve these technologies.
+This repository contains a DevContainer configuration for a development environment that supports both Node.js and Python. It provides a consistent, reproducible setup for developers working on projects that involve these technologies.
 
 ## Features
 
+- Node.js LTS version
+- Python 3.10
 - Common development utilities
 - Pre-configured VS Code settings and extensions
 - Zsh with Oh My Zsh
@@ -16,7 +18,7 @@ The DevContainer is defined by several configuration files:
 1. `.devcontainer/devcontainer.json`: The main configuration file that specifies:
    - Base image and build instructions
    - Ports to forward
-   - Features to install
+   - Features to install (Node.js, Python, and common utilities)
    - VS Code extensions and settings
    - Commands to run on container creation
 
@@ -49,8 +51,9 @@ You can customize the DevContainer by modifying the configuration files:
 - Consistent development environment across team members
 - Easy onboarding for new developers
 - Isolation from the host system
+- Pre-configured tools and settings for Node.js and Python development
 
 ## License
 
 Copyright © 2024 [tooniez](https://github.com/tooniez). <br />
-This project is [MIT](https://github.com/tooniez/devcontainer-base/blob/main/LICENSE) licensed.
+This project is [MIT](https://github.com/tooniez/devcontainer-python-node/blob/main/LICENSE) licensed.

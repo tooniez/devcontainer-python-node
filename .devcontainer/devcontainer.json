@@ -1,5 +1,5 @@
 {
-  "name": "DevContainer Base template",
+  "name": "DevContainer for Node.js and Python",
 
   "build": {
     "dockerfile": "./Dockerfile",
@@ -7,11 +7,25 @@
   },
 
   "forwardPorts": [
-    // typical ports
-    3000, 8080, 5000
+    // Node.js typical ports
+    3000, 8080,
+    // Python typical ports
+    5000, 8000
   ],
 
   "features": {
+    // Install Node.js
+    "ghcr.io/devcontainers/features/node:latest": {
+      "version": "lts",
+      "nodeGypDependencies": true,
+      "nvmInstallPath": "/usr/local/share/nvm"
+    },
+
+    // Install Python
+    "ghcr.io/devcontainers/features/python:latest": {
+      "version": "3.10"
+    },
+
     // Install common utilities
     "ghcr.io/devcontainers/features/common-utils:latest": {
       "installZsh": true,
@@ -30,6 +44,13 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        // Node.js extensions
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+
+        // Python extensions
+        "ms-python.python",
+        "ms-python.vscode-pylance",
 
         // General extensions
         "GitHub.copilot",
@@ -37,8 +58,7 @@
         "GitHub.copilot-chat",
         "eamodio.gitlens",
         "EditorConfig.EditorConfig",
-        "streetsidesoftware.code-spell-checker",
-        "esbenp.prettier-vscode"
+        "streetsidesoftware.code-spell-checker"
       ],
 
       "settings": {
@@ -48,6 +68,7 @@
             "path": "/usr/bin/zsh"
           }
         },
+        "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
         "editor.minimap.enabled": false,
         "explorer.sortOrder": "type",
         "explorer.fileNesting.enabled": true,
